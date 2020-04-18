@@ -41,7 +41,10 @@
 
         //         }else if (data[i].principal >= 2500 && data[i].time >= 3) {
         //             rate = 4;
-                    
+
+
+         // Have seen another mistake, instead of OR I used AND
+
         //         }else if (data[i].principal < 2500 && data[i].time <= 1) {
         //             rate = 2;
                     
@@ -58,7 +61,7 @@
         //                 interest: interest
         //             });
 
-        //         console.log(interestData);
+        //         console.log(interestData);  I SUPPOSE CONSOLE DOT LOG OUTSIDE THE LOOP
             
         //     }
         //     return interestData;
@@ -77,8 +80,8 @@
 
                 }else if (array[i].principal >= 2500 && array[i].time >= 3) {
                     rate = 4;
-                    
-                }else if (array[i].principal < 2500 && array[i].time <= 1) {
+                    //THE TASK I SUBMITTED, I MADE USE OF && WHICH IS NOT IN THE QUESTION BUT || WAS
+                }else if (array[i].principal < 2500 || array[i].time <= 1) {
                     rate = 2;
                     
                 }else {
@@ -94,9 +97,11 @@
                         interest: interest
                     });
 
-                console.log(interestData);
+                    // console.log(interestData); I SUPPOSED LOG IT OUTSIDE THE FOR LOOP SO TO AVOID REPETATION
             
             }
+            console.log(interestData);
+
             return interestData;
         }
 
