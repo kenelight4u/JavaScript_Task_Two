@@ -91,13 +91,31 @@
         }
         interestCalculator(data);
 
+        // TENARY OPERATOR FORMAT
+        function interestCalculator (arr) {
+            let interestData = [];
+            let interest;
+            
+            for (const obj of arr) {
+                let rate = (obj.principal >= 2500 && 
+                    (obj.time > 1 && obj.time < 3)) ? 3
+                    : (obj.principal >= 2500 && obj.time >= 3) ? 4
+                    : (obj.principal < 2500 || obj.time <= 1) ? 2
+                    : 1;
 
+                interest = (obj.principal * rate * obj.time) / 100;
 
+                interestData.push({
+                            principal: obj.primcipal,
+                            time: obj.time,
+                            rate: rate,
+                            interest: interest
+                    });
+            }
 
-
-
-
-
+            return interestData;
+        } 
+            interestCalculator(data);
 
     </script>
 </body>

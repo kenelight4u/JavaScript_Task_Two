@@ -9,6 +9,7 @@
     <h3>JavaScript Task Three</h3>
 
     <script>
+        // THIS WAS THE ONE I SUBMITTED
         function oneParameterFunction(number) {
 
             let outputArray = [];
@@ -47,6 +48,84 @@
             oneParameterFunction(100);
 
             oneParameterFunction(150);
+
+            // CONVERTING IT TO TENARY OPERATOR
+
+        function oneParameterFunction (number) {
+    
+             let outPutArray = [];
+    
+            for (let i = 1; i <= number; i++) {
+                let value = (i%2 === 0 && i%3 !== 0 && i%5 !== 0) ? "yu"
+                    : (i%3 === 0 && i%2 !== 0 && i%5 !== 0) ? "gi"
+                    : (i%5 === 0 && i%2 !== 0 && i%3 !== 0) ? "oh"
+                    : (i%2 === 0 && i%3 === 0 && i%5 !== 0) ? "yu-gi"
+                    : (i%2 === 0 && i%5 === 0 && i%3 !== 0) ? "yu-oh"
+                    : (i%3 === 0 && i%5 === 0 && i%2 !== 0) ? "gi-oh"
+                    : (i%2 === 0 && i%3 === 0 && i%5 === 0) ? "yu-gi-oh"
+                    : i;
+
+                outPutArray.push(value);
+            }
+                return outPutArray;
+        }
+        oneParameterFunction(100);
+
+            // THIS WAS THE ONE CHRIS SENT TO ME
+            function oneParameterFunction (number) {
+                let outputArray = [];
+                let value;
+
+                for (let i = 1; i <= number; i++) {
+                    value = null;
+
+                    if (i%2 === 0) {
+                        value = "yu";
+                    }
+                    if (i%3 === 0) {
+                        value = value == null ? "gi" : value + "-gi";
+                    }
+                    if (i%5 === 0) {
+                        value = value == null ? "oh" : value + "-oh";
+                    }
+                    value = value == null ? i : value;
+
+                    outputArray.push(value);
+                }
+                return outputArray;
+            }
+
+            oneParameterFunction(100);
+
+            // JEFF CORRECTION
+
+            function yuGiOhReplacer (num) {
+                let yuGiOh = [];
+
+                for (let i = 1; i <= num; i++) {
+                    let temp = "";
+
+                    if (i%2 === 0) {
+                        temp += "yu";
+                    }
+                    if (i%3 === 0) {
+                        temp += temp !== "" ? "-gi" : "gi";
+                    }
+                    if (i%5 === 0) {
+                        temp += temp !== "" ? "-oh" : "oh";
+                    }
+                    if (temp === "") {
+                        temp = i;
+                    }
+
+                    yuGiOh.push(temp);
+                }
+                console.log(yuGiOh);
+                return yuGiOh;
+            }
+
+            yuGiOhReplacer(100);
+            yuGiOhReplacer(45);
 
     </script>
 
